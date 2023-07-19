@@ -70,10 +70,6 @@ jobs:
       image-names: |
         ghcr.io/${{ github.repository }}
         ghcr.io/${{ github.repository }}-stable
-      tag-rules: |
-        type=raw,value={{date 'YYYYMMDD'}}-{{sha}},enable={{is_default_branch}},priority=300
-        type=ref,event=tag,priority=200
-        type=raw,value=latest,enable={{is_default_branch}},priority=100
 
   gitops-pr:
     name: Call GitOps PR
